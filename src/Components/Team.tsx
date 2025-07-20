@@ -1,6 +1,10 @@
 // import React from 'react'
 import TeamCards from "./TeamCards";
 import "./effect.css";
+import mabelImg from "../assets/instapp/mabelpines.png";
+import clarenceImg from "../assets/instapp/clarence.png";
+import starImg from "../assets/instapp/starbutterfly.png";
+import finieasImg from "../assets/instapp/finieas.png";
 
 function Team() {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -86,25 +90,25 @@ function Team() {
           <TeamCards
             name="Mabel Pines"
             username="mabelpineesss"
-            image="src/assets/instapp/mabelpines.png"
+            image={mabelImg}
             link="https://instagram.com/mabelpineesss"
           />
           <TeamCards
             name="Clarence"
             username="clarenceturkiye"
-            image="src/assets/instapp/clarence.png"
+            image={clarenceImg}
             link="https://instagram.com/clarenceturkiye"
           />
           <TeamCards
             name="Star Butterfly"
             username="kelebekstarr"
-            image="src/assets/instapp/starbutterfly.png"
+            image={starImg}
             link="https://instagram.com/kelebekstarr"
           />
           <TeamCards
             name="Finieas"
             username="benfinieas"
-            image="src/assets/instapp/finieas.png"
+            image={finieasImg}
             link="https://instagram.com/benfinieas"
           />
         </div>
