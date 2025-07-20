@@ -32,7 +32,19 @@ body {
   box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+  body {
+    background-position: center top;
+    background-size: cover;
+  }
+}
 
+@media (max-width: 480px) {
+  body {
+    background-position: center top;
+    background-size: cover;
+  }
+}
 
 /* body::before {
   content: "";
