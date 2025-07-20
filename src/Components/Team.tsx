@@ -86,25 +86,25 @@ function Team() {
           <TeamCards
             name="Mabel Pines"
             username="mabelpineesss"
-            image="/assets/instapp/mabelpines.png"
+            image="src/assets/instapp/mabelpines.png"
             link="https://instagram.com/mabelpineesss"
           />
           <TeamCards
             name="Clarence"
             username="clarenceturkiye"
-            image="/assets/instapp/clarence.png"
+            image="src/assets/instapp/clarence.png"
             link="https://instagram.com/clarenceturkiye"
           />
           <TeamCards
             name="Star Butterfly"
             username="kelebekstarr"
-            image="/assets/instapp/starbutterfly.png"
+            image="src/assets/instapp/starbutterfly.png"
             link="https://instagram.com/kelebekstarr"
           />
           <TeamCards
             name="Finieas"
             username="benfinieas"
-            image="/assets/instapp/finieas.png"
+            image="src/assets/instapp/finieas.png"
             link="https://instagram.com/benfinieas"
           />
         </div>
