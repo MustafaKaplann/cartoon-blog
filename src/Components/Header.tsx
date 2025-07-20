@@ -45,38 +45,36 @@ function Header() {
           </div>
         </div>
 
-      <div className="container w-300 absolute flex justify-end  opacity-75">
+      <div className="container w-300 absolute flex justify-end opacity-75 hidden md:flex">
           <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
           </div>
           <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
           </div>
           <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
           </div>
-
-        </div>
+          <div className="bubble">
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+          </div>
+      </div>
 
         
         {/* <div className="absolute  z-0 balon">
