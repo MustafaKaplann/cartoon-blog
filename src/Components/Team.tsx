@@ -5,101 +5,111 @@ import "./effect.css";
 function Team() {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    window.location.href = "/"; 
+    window.location.href = "/";
   };
   return (
     <div className="">
-                  <div className="container absolute top-50 opacity-70">
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
+      <div className="container absolute top-50 opacity-70">
+        <div className="bubble">
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
         </div>
+        <div className="bubble">
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="bubble">
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="bubble">
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="bubble">
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+      </div>
 
-
-        <button onClick={(e)=>{handleClick(e)}} className=" rotate-90 absolute mt-8 ml-40 cursor-pointer bg-gray-300 px-3 py-2 rounded-md text-white tracking-wider shadow-xl animate-bounce hover:bg-green-300 transition-colors duration-300">
-        <svg
-          className="w-5 h-10 text-black "
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+      <div
+        className="absolute rotate-90"
+        style={{
+          top: "2rem",
+          left: "2rem",
+        }}
+      >
+        <button
+          onClick={handleClick}
+          className="cursor-pointer bg-gray-300 px-3 py-2 rounded-md text-white tracking-wider shadow-xl animate-bounce hover:bg-green-300 transition-colors duration-300"
+          style={{
+        width: "48px",
+        minWidth: "32px",
+          }}
         >
-          <path
-            d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-            stroke-linejoin="round"
-            stroke-linecap="round"
-          ></path>
-        </svg>
-      </button>
-    <div className="flex flex-col items-center justify-center min-h-screen ">
-    
-
-      <p className="my-10 text-white font-semibold text-4xl text-shadow-lg text-shadow-stone-500">
-        BİZZİKO
-      </p>
-      <div className="flex flex-row flex-wrap items-center justify-center gap-2">
-        <TeamCards
-          name="Mabel Pines"
-          username="mabelpineesss"
-          image="./assets/instapp/mabelpines.png"
-          link="https://instagram.com/mabelpineesss"
-        />
-        <TeamCards
-          name="Clarence"
-          username="clarenceturkiye"
-          image="./assets/instapp/clarence.png"
-          link="https://instagram.com/clarenceturkiye"
-        />
-        <TeamCards
-          name="Star Butterfly"
-          username="kelebekstarr"
-          image="./assets/instapp/starbutterfly.png"
-          link="https://instagram.com/kelebekstarr"
-        />
-        <TeamCards
-          name="Finieas"
-          username="benfinieas"
-          image="./assets/instapp/finieas.png"
-          link="https://instagram.com/benfinieas"
-        />
+          <svg
+        className="w-5 h-10 text-black"
+        stroke="currentColor"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+          >
+        <path
+          d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        ></path>
+          </svg>
+        </button>
+      </div>
+      <div className="flex flex-col items-center justify-center min-h-screen ">
+        <p className="my-10 text-white font-semibold text-4xl text-shadow-lg text-shadow-stone-500">
+          BİZZİKO
+        </p>
+        <div className="flex flex-row flex-wrap items-center justify-center gap-2">
+          <TeamCards
+            name="Mabel Pines"
+            username="mabelpineesss"
+            image="/assets/instapp/mabelpines.png"
+            link="https://instagram.com/mabelpineesss"
+          />
+          <TeamCards
+            name="Clarence"
+            username="clarenceturkiye"
+            image="/assets/instapp/clarence.png"
+            link="https://instagram.com/clarenceturkiye"
+          />
+          <TeamCards
+            name="Star Butterfly"
+            username="kelebekstarr"
+            image="/assets/instapp/starbutterfly.png"
+            link="https://instagram.com/kelebekstarr"
+          />
+          <TeamCards
+            name="Finieas"
+            username="benfinieas"
+            image="/assets/instapp/finieas.png"
+            link="https://instagram.com/benfinieas"
+          />
+        </div>
       </div>
     </div>
-
-    </div>
-
 
     // <>
     // <div className="flex items-center justify-center min-h-screen">
