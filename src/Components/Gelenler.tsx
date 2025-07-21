@@ -10,7 +10,7 @@ export default function Gelenler() {
   const [videoUrl, setVideoUrl] = useState<string>('');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleSelect = () => fileInputRef.current?.click();
+  // const handleSelect = () => fileInputRef.current?.click();
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selected = e.target.files?.[0] ?? null;
