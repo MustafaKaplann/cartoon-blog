@@ -81,14 +81,14 @@ function Header() {
         <div className="z-1 w-full flex items-center justify-center">
           <nav className="flex flex-col items-center space-y-8">
             <ul className="my-30 flex flex-col gap-5 text-shadow-lg  font-medium tracking-wide items-center space-y-4 text-lg text-gray-200">
-              <li>
+              {/* <li>
                 <a
                   href="/"
                   className="hover:text-[1.61rem] hover:text-yellow-100 text-2xl transition-all"
                 >
                   Anasayfa
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   href="/sizdengelenler"

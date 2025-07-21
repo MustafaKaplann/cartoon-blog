@@ -1,13 +1,15 @@
-import React, { useState, useRef } from 'react';
-import axios from 'axios';
-import { motion } from 'framer-motion';
-import './effect.css'
+import React, { useState, useRef } from "react";
+import { ArrowLeft } from "lucide-react";
+
+import axios from "axios";
+import { motion } from "framer-motion";
+import "./effect.css";
 
 export default function Gelenler() {
   const [file, setFile] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string>('');
+  const [preview, setPreview] = useState<string>("");
   const [uploading, setUploading] = useState(false);
-  const [videoUrl, setVideoUrl] = useState<string>('');
+  const [videoUrl, setVideoUrl] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // const handleSelect = () => fileInputRef.current?.click();
@@ -26,15 +28,15 @@ export default function Gelenler() {
     try {
       // 1) Presigned URL için Worker'a istek
       const workerUrl = import.meta.env.VITE_WORKER_URL;
-      const { data } = await axios.post(
-        `${workerUrl}/generate-upload`,
-        { filename: file.name, contentType: file.type }
-      );
+      const { data } = await axios.post(`${workerUrl}/generate-upload`, {
+        filename: file.name,
+        contentType: file.type,
+      });
       const { url, key } = data;
 
       // 2) R2'ye PUT ile yükleme
       await axios.put(url, file, {
-        headers: { 'Content-Type': file.type }
+        headers: { "Content-Type": file.type },
       });
 
       // 3) CDN URL oluşturma
@@ -42,19 +44,34 @@ export default function Gelenler() {
       const publicUrl = `${cdnUrl}/${key}`;
       setVideoUrl(publicUrl);
       setFile(null);
-      setPreview('');
+      setPreview("");
     } catch (err: any) {
-      console.error('Upload error:', err);
-      alert('Yükleme hatası: ' + (err.response?.data?.message || err.message));
+      console.error("Upload error:", err);
+      alert("Yükleme hatası: " + (err.response?.data?.message || err.message));
     } finally {
       setUploading(false);
     }
   };
-
+  const handleBack = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    window.location.href = "/";
+  };
   return (
-    <div className="min-h-screen flex flex-col items-center p-4">
-  
-              <div className="container z-[-1] absolute opacity-70">
+    <div className="max-w-3xl mx-auto px-6 py-12">
+      <motion.button
+        onClick={(e) => {
+          handleBack(e);
+        }}
+        className="cursor-pointer w-10 h-10 md:w-12 md:h-12 p-2 border border-pink-500 text-white p-2 rounded-full shadow-md hover:bg-pink-500 transition-colors duration-300"
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+        style={{ backdropFilter: "blur(8px)" }}
+      >
+        <ArrowLeft className="w-6 h-6" />
+      </motion.button>
+
+      <div className=" flex flex-col items-center ">
+        <div className="container z-[-1] absolute opacity-70">
           <div className="bubble">
             <span />
             <span />
@@ -92,109 +109,118 @@ export default function Gelenler() {
           </div>
         </div>
 
-      <div className="container z-[-1] w-300 absolute flex justify-end opacity-75 hidden md:flex">
+        <div className="container z-[-1] w-300 absolute flex justify-end opacity-75 hidden md:flex">
           <div className="bubble">
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
           </div>
           <div className="bubble">
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
           </div>
           <div className="bubble">
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
           </div>
           <div className="bubble">
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
           </div>
-      </div>
-      <header className="w-full max-w-md mb-6">
-        <motion.h1
-          className="text-3xl my-10 font-bold text-center text-white mb-4 text-shadow-lg text-shadow-stone-500"
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          Videonu Gönder!
-        </motion.h1>
-      </header>
-
-      <motion.div
-        className="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 space-y-4"
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.4 }}
-      >
-        {!preview && !videoUrl && (
-          <div
-            className="border-2 border-dashed border-indigo-300 rounded-lg h-48 flex items-center justify-center cursor-not-allowed hover:border-indigo-400"
-            // onClick={handleSelect}
+        </div>
+        <header className="w-full max-w-md mb-6">
+          <motion.h1
+            className="text-3xl my-10 font-bold text-center text-white mb-4 text-shadow-lg text-shadow-stone-500"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
           >
-            <p className="text-indigo-400">Video yüklemek için tıkla<br />(YAKINDA) </p>
-            <input
-              type="file"
-              accept="video/*"
-              className="hidden"
-              ref={fileInputRef}
-              onChange={handleFile}
-            />
-          </div>
-        )}
+            Videonu Gönder!
+          </motion.h1>
+        </header>
 
-        {preview && (
-          <div className="relative">
-            <video
-              src={preview}
-              controls
-              className="rounded-lg w-full h-auto max-h-64 object-cover"
-            />
-            <button
-              className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-1"
-              onClick={() => { setPreview(''); setFile(null); }}
+        <motion.div
+          className="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 space-y-4"
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.4 }}
+        >
+          {!preview && !videoUrl && (
+            <div
+              className="border-2 border-dashed border-indigo-300 rounded-lg h-48 flex items-center justify-center cursor-not-allowed hover:border-indigo-400"
+              // onClick={handleSelect}
             >
-              ✕
-            </button>
-          </div>
-        )}
+              <p className="text-indigo-400">
+                Video yüklemek için tıkla
+                <br />
+                (YAKINDA){" "}
+              </p>
+              <input
+                type="file"
+                accept="video/*"
+                className="hidden"
+                ref={fileInputRef}
+                onChange={handleFile}
+              />
+            </div>
+          )}
 
-        {videoUrl && (
-          <div className="space-y-2">
-            <h2 className="font-semibold text-lg">Yüklendi!</h2>
-            <video
-              src={videoUrl}
-              controls
-              className="rounded-lg w-full h-auto max-h-64 object-cover"
-            />
-          </div>
-        )}
+          {preview && (
+            <div className="relative">
+              <video
+                src={preview}
+                controls
+                className="rounded-lg w-full h-auto max-h-64 object-cover"
+              />
+              <button
+                className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-1"
+                onClick={() => {
+                  setPreview("");
+                  setFile(null);
+                }}
+              >
+                ✕
+              </button>
+            </div>
+          )}
 
-        <button
-          className="w-full py-2 text-white font-medium rounded-xl shadow-md \
+          {videoUrl && (
+            <div className="space-y-2">
+              <h2 className="font-semibold text-lg">Yüklendi!</h2>
+              <video
+                src={videoUrl}
+                controls
+                className="rounded-lg w-full h-auto max-h-64 object-cover"
+              />
+            </div>
+          )}
+
+          <button
+            className="w-full py-2 text-white font-medium rounded-xl shadow-md \
             bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 \
             disabled:opacity-50 disabled:cursor-not-allowed"
-          disabled={!file || uploading}
-          onClick={handleUpload}
-        >
-          {uploading ? 'Yükleniyor...' : 'Yükle'}
-        </button>
-      </motion.div>
+            disabled={!file || uploading}
+            onClick={handleUpload}
+          >
+            {uploading ? "Yükleniyor..." : "Yükle"}
+          </button>
+        </motion.div>
 
-      <footer className="mt-auto text-sm text-white pb-4">
-        © {new Date().getFullYear()} Bizziko
-      </footer>
+        {/* <footer className="mt-auto text-sm text-white pt-10 pb-4">
+          © {new Date().getFullYear()} Bizziko
+        </footer> */}
+      </div>
     </div>
-)}
+  );
+}
