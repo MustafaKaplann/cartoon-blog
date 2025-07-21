@@ -77,43 +77,7 @@ function Header() {
       </div>
 
         
-        {/* <div className="absolute  z-0 balon">
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="bubble">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-        </div> */}
+    
         <div className="z-1 w-full flex items-center justify-center">
           <nav className="flex flex-col items-center space-y-8">
             <ul className="my-30 flex flex-col gap-5 text-shadow-lg  font-medium tracking-wide items-center space-y-4 text-lg text-gray-200">
@@ -127,10 +91,10 @@ function Header() {
               </li>
               <li>
                 <a
-                  href="/cekilis"
+                  href="/sizdengelenler"
                   className="hover:text-[1.61rem] hover:text-yellow-100 text-2xl transition-all"
                 >
-                  Çekiliş
+                  Sizden Gelenler
                 </a>
               </li>
               <li>
