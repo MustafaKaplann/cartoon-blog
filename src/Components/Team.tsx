@@ -3,11 +3,11 @@ import { Instagram, Music2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const teamMembers = [
-  { name: '@mabelpineesss', url: 'https://instagram.com/mabelpineesss', image: 'src/assets/instapp/mabelpines.png', type: 'instagram' },
-  { name: '@clarenceturkiye', url: 'https://instagram.com/clarenceturkiye', image: 'src/assets/instapp/clarence.png', type: 'instagram' },
-  { name: '@kelebekstarr', url: 'https://instagram.com/kelebekstarr', image: 'src/assets/instapp/starbutterfly.png', type: 'instagram' },
-  { name: '@benfinieas', url: 'https://instagram.com/benfinieas', image: 'src/assets/instapp/finieas.png', type: 'instagram' },
-  { name: '@cartoondropp', url: 'https://tiktok.com/@cartoondropp', image: 'src/assets/instapp/daphne.jpeg', type: 'tiktok' },
+  { name: '@mabelpineesss', url: 'https://instagram.com/mabelpineesss', image: '/src/assets/instapp/mabelpines.png', type: 'instagram' },
+  { name: '@clarenceturkiye', url: 'https://instagram.com/clarenceturkiye', image: '/src/assets/instapp/clarence.png', type: 'instagram' },
+  { name: '@kelebekstarr', url: 'https://instagram.com/kelebekstarr', image: '/src/assets/instapp/starbutterfly.png', type: 'instagram' },
+  { name: '@benfinieas', url: 'https://instagram.com/benfinieas', image: '/src/assets/instapp/finieas.png', type: 'instagram' },
+  { name: '@cartoondropp', url: 'https://tiktok.com/@cartoondropp', image: '/src/assets/instapp/daphne.jpeg', type: 'tiktok' },
 ];
 
 function Team() {
