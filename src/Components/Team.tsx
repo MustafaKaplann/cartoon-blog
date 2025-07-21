@@ -1,13 +1,18 @@
 // import React from 'react';
 import { Instagram, Music2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import mabelImg from "../assets/instapp/mabelpines.png";
+import clarenceImg from "../assets/instapp/clarence.png";
+import starImg from "../assets/instapp/starbutterfly.png";
+import finieasImg from "../assets/instapp/finieas.png";
+import daphneImg from "../assets/instapp/daphne.jpeg";
 
 const teamMembers = [
-  { name: '@mabelpineesss', url: 'https://instagram.com/mabelpineesss', image: '/src/assets/instapp/mabelpines.png', type: 'instagram' },
-  { name: '@clarenceturkiye', url: 'https://instagram.com/clarenceturkiye', image: '/src/assets/instapp/clarence.png', type: 'instagram' },
-  { name: '@kelebekstarr', url: 'https://instagram.com/kelebekstarr', image: '/src/assets/instapp/starbutterfly.png', type: 'instagram' },
-  { name: '@benfinieas', url: 'https://instagram.com/benfinieas', image: '/src/assets/instapp/finieas.png', type: 'instagram' },
-  { name: '@cartoondropp', url: 'https://tiktok.com/@cartoondropp', image: '/src/assets/instapp/daphne.jpeg', type: 'tiktok' },
+  { name: '@mabelpineesss', url: 'https://instagram.com/mabelpineesss', image: mabelImg, type: 'instagram' },
+  { name: '@clarenceturkiye', url: 'https://instagram.com/clarenceturkiye', image: clarenceImg, type: 'instagram' },
+  { name: '@kelebekstarr', url: 'https://instagram.com/kelebekstarr', image: starImg, type: 'instagram' },
+  { name: '@benfinieas', url: 'https://instagram.com/benfinieas', image: finieasImg, type: 'instagram' },
+  { name: '@cartoondropp', url: 'https://tiktok.com/@cartoondropp', image: daphneImg, type: 'tiktok' },
 ];
 
 function Team() {
